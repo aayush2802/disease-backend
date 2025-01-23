@@ -87,6 +87,10 @@ def preprocess_image(image_path):
     image_array = np.expand_dims(image_array, axis=0)  # Add batch dimension
     return image_array
 
+@app.route('/')
+def home():
+    return "Flask backend is running!"
+    
 # Prediction endpoint
 @app.route('/predict', methods=['POST'])
 def predict():
